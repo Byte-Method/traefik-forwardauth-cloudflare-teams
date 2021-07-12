@@ -1,23 +1,27 @@
-from flask import request
+from flask import request, abort
 from werkzeug import Response
-from werkzeug.datastructures import Headers
 from .jwt import decode_token
+from jwt.exceptions import ExpiredSignatureError, InvalidKeyError, InvalidTokenError, PyJWKClientError, PyJWKSetError, PyJWKError
+
 
 def index():
-    return Response('use: /auth/<audience>', 404, content_type='text/plain')
+    return Response('use: /auth/<audience>', 404)
+
 
 def auth(audience):
     jwt = request.headers.get('Cf-Access-Jwt-Assertion')
-    
+
     if jwt is None:
-        return Response('no_token', 401, content_type='text/plain')
-    
-    jwt_data = decode_token(jwt, audience)
+        abort(Response('Token is missing.', 401))
 
-    if jwt_data is not None:
-        response = Response('', 204)
-        response.headers = Headers({'X-Auth-User': jwt_data['email']})
-
-        return response
-    
-    return Response('invalid_token', 401, content_type='text/plain')
+    try:
+        user = decode_token(jwt, audience)['email']
+        return Response('Verified.', 200, {'X-Auth-User': user})
+    except ExpiredSignatureError:
+        abort(Response('Token is expired.', 401))
+    except InvalidTokenError:
+        abort(Response('Token is invalid.', 400))
+    except (InvalidKeyError, PyJWKError, PyJWKSetError, PyJWKClientError):
+        abort(Response('Service temporarily unavailable.', 503))
+    except:
+        abort(Response('An unknown error occurred.', 500))
