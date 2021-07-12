@@ -36,7 +36,7 @@ services:
       - "traefik.http.routers.api.middlewares=cloudflare-access@docker"
       - "traefik.http.middlewares.cloudflare-access.forwardauth.address=http://traefik-forwardauth-cloudflare-teams:8000/auth/{AUD}"
 
-  traefik-forwardauth-cloudflare-access:
+  traefik-forwardauth-cloudflare-teams:
     image: "ghcr.io/byte-method/traefik-forwardauth-cloudflare-teams:latest"
     environment:
       CF_TEAMS_DOMAIN: "test.cloudflareaccess.com"
