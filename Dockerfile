@@ -25,10 +25,16 @@ FROM base as py-dependencies
 
 # install system dependencies
 RUN apt-get update && \
-	apt-get install -y --no-install-recommends gcc && \
+	apt-get install -y --no-install-recommends gcc rustc && \
 	apt-get autoremove -y && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
+
+RUN --security=insecure \
+	mkdir -p /root/.cargo && \
+	chmod 777 /root/.cargo && \
+	mount -t tmpfs none /root/.cargo && \
+	pip3 install --no-cache-dir cryptography
 
 # create new virtualenv
 RUN python -m venv $APP_VIRTUALENV
