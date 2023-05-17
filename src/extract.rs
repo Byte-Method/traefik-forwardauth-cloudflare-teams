@@ -1,5 +1,4 @@
-use axum::{async_trait, extract::FromRequestParts, headers::HeaderName};
-use hyper::http::request::Parts;
+use axum::{async_trait, extract::FromRequestParts, headers::HeaderName, http::request::Parts};
 
 use crate::error::{InvalidTokenError, RequestError};
 
