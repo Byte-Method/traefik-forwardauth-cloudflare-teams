@@ -5,6 +5,6 @@ charset = utf-8
 end_of_line = lf
 insert_final_newline = true
 
-[*.py]
-indent_style = space
+[*.rs]
+indent_style = tab
 indent_size = 4

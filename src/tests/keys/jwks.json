@@ -1,0 +1,16 @@
+{
+	"keys": [
+		{
+			"kty": "RSA",
+			"e": "AQAB",
+			"use": "sig",
+			"kid": "_eMZ_eHZcJjsjn2LvNqZi6vdoOm9w0LRUwPe5C7mwBI",
+			"alg": "RS256",
+			"n": "l3QVcozoaUEmOeXan93VwDDEceFB3Fsp43j8Bmj74WxWokHD0FJFbXnO6t1XG-MkrB8IFRJsmWjfjzu7-8WZiwoIv4dgDCnPEgnrgxTWNxo16JZce2ptJ30i_WJ53iJuZfsS52_kjvyd_ZAyYfvP8zT3QZDK2nKW4t2n--bX_OjOPpfnEgZZbOkTuYlCxIHkPB7LLV-9rBAVxwp5HVCR95r7POLH8AV3QNerOzgHQtrS1CxvNi0chUsFFpjWZa8Zbuzpvvr4R9xCD2L3_YWguhomTpBwN4-pCr2zlzXIgrMNaxK1RSURsyzTl2iaOiauzqBkULPMjCDPSmFll--e7w"
+		}
+	],
+	"public_cert": {
+		"kid": "_eMZ_eHZcJjsjn2LvNqZi6vdoOm9w0LRUwPe5C7mwBI",
+		"cert": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAl3QVcozoaUEmOeXan93V\nwDDEceFB3Fsp43j8Bmj74WxWokHD0FJFbXnO6t1XG+MkrB8IFRJsmWjfjzu7+8WZ\niwoIv4dgDCnPEgnrgxTWNxo16JZce2ptJ30i/WJ53iJuZfsS52/kjvyd/ZAyYfvP\n8zT3QZDK2nKW4t2n++bX/OjOPpfnEgZZbOkTuYlCxIHkPB7LLV+9rBAVxwp5HVCR\n95r7POLH8AV3QNerOzgHQtrS1CxvNi0chUsFFpjWZa8Zbuzpvvr4R9xCD2L3/YWg\nuhomTpBwN4+pCr2zlzXIgrMNaxK1RSURsyzTl2iaOiauzqBkULPMjCDPSmFll++e\n7wIDAQAB\n-----END PUBLIC KEY-----"
+	}
+}
